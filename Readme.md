@@ -9,16 +9,25 @@
 
 # Dependencies
 
+## Building
+
+* build chain (TBD)
 * bash
 * curl
+
+## Running
+
+* Nothing
 
 ## Requirements for stack
 
 * Load balancer
-* SSL Termination
+
+* SSL Termination (?)
 * Domain handling (?)
-* Allow apps to schedule cron jobs
+* Cron jobs (?)
+* Log routing (?)
 
-## Other ideas
+# Big Picture
 
-* Tell processes to stop listening, with option to tell them to listen again
+Operating System -> Stack -> Apps
