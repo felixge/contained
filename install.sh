@@ -1,11 +1,6 @@
 set -o errexit
 
-echo "Building 12-stack"
-echo "Deleting build folder"
-rm -rf build
-mkdir -p build/{bin,src}
+if [ ! -d build ]; then mkdir build; fi
 
-cd build
-bash ../stack/haproxy.sh
-
-pwd
+bash ./common.sh
+bash ./haproxy.sh
