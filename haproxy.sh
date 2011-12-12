@@ -1,6 +1,7 @@
 #!/bin/bash
-HAPROXY_VERSION="1.4.18"
-HAPROXY_TARGET="generic"
+HAPROXY_VERSION=${HAPROXY_TARGET:-1.4.18}
+HAPROXY_TARGET=${HAPROXY_TARGET:-linux26}
+HAPROXY_CHROOT=${HAPROXY_CHROOT:-/var/chroot/haproxy}
 
 set -o errexit
 cd build
@@ -14,3 +15,5 @@ if [ ! -d haproxy-${HAPROXY_VERSION} ]; then
 fi
 
 make -C haproxy-${HAPROXY_VERSION} install
+
+if [ ! -d ${HAPROXY_CHROOT} ]; then mkdir -p ${HAPROXY_CHROOT}; fi
