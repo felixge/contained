@@ -4,3 +4,4 @@ if [ ! -d build ]; then mkdir build; fi
 
 bash ./common.sh
 bash ./haproxy.sh
+bash ./lxc.sh
